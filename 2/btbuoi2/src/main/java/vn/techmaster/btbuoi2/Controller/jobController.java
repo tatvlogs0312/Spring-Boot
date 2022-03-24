@@ -3,12 +3,10 @@ package vn.techmaster.btbuoi2.Controller;
 import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -39,7 +37,7 @@ public class jobController {
         return listJob.values().stream().toList();
     }
 
-    @GetMapping(value = "{/id}")
+    @GetMapping(value = "/{id}")
     public Job getJobByID(@PathVariable("id") String id) {
         return listJob.get(id);
     }
