@@ -56,7 +56,7 @@ public class jobController {
     @GetMapping(value = "/keyword/{keyword}")
     public List<Job> getListByKeyword(@PathVariable("keyword") String keyword) {
         return listJob.values().stream()
-                .filter(i -> (i.getTitle().contains(keyword)) || (i.getDescription().contains(keyword)))
+                .filter(i -> (i.getTitle().toLowerCase().contains(keyword.toLowerCase())) || (i.getDescription().toLowerCase().contains(keyword.toLowerCase())))
                 .collect(Collectors.toList());
     }
 
@@ -64,8 +64,8 @@ public class jobController {
     public List<Job> getListByLocationAndKeyword(@RequestParam("location") String location,
             @RequestParam("keyword") String keyword) {
         return listJob.values().stream()
-                .filter(i -> ((i.getTitle().contains(keyword)) || (i.getDescription().contains(keyword)))
-                        && (i.getLocation().contains(location)))
+                .filter(i -> ((i.getTitle().toLowerCase().contains(keyword.toLowerCase())) || (i.getDescription().toLowerCase().contains(keyword.toLowerCase())))
+                        && (i.getLocation().toLowerCase().contains(location.toLowerCase())))
                 .collect(Collectors.toList());
     }
 
