@@ -1,4 +1,4 @@
-package vn.techmaster.btbuoi2.JobRequest;
+package vn.techmaster.btbuoi2.jobRequest;
 
 /**
  * JobRequest

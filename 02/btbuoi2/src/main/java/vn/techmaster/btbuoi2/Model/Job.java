@@ -1,4 +1,4 @@
-package vn.techmaster.btbuoi2.Model;
+package vn.techmaster.btbuoi2.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
