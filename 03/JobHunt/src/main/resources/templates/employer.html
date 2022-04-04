@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1>Danh sách nhà tuyển dụng</h1>
+    <table class="table" border="1">
+        <thead>
+          <tr>
+            <th scope="col">stt</th>
+            <th scope="col">name</th>
+            <th scope="col">website</th>
+            <th scope="col">email</th>
+            <th scope="col">address</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="employer, iStat:${employers}">
+            <th scope="row" th:text="${iStat.index} +1"></th>
+            <td th:text="${employer.name}"></td>
+            <td th:text="${employer.website}"></td>
+            <td th:text="${employer.email}"></td>
+            <td th:text="${employer.address}"></td>
+          </tr>        
+        </tbody>
+      </table>
+      <a href="/employer/add">thêm tiếp</a>
+      <br>
+      <a href="/">trang chủ</a>
+</body>
+</html>
